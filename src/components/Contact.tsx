@@ -1,45 +1,17 @@
 "use client";
 import { useState } from "react";
 
-const contactInfo = [
-    {
-        icon: (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-        ),
-        label: "My Location",
-        value: "123 Main Street\nCity, State 12345",
-    },
-    {
-        icon: (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-        ),
-        label: "Phone Number",
-        value: "+1 (555) 123-4567",
-    },
-    {
-        icon: (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-        ),
-        label: "Email Address",
-        value: "hello@takunda.com",
-    },
-];
-
 export default function Contact() {
     const [form, setForm] = useState({
-        firstName: "",
-        lastName: "",
+        name: "",
+        email: "",
+        phone: "",
         message: "",
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
@@ -49,109 +21,135 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 bg-white relative overflow-hidden">
-            {/* Decorative blob */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 opacity-10 pointer-events-none">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        fill="#7c3aed"
-                        d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.5,90,-15.9,88.5,-0.9C87,14.2,81.4,28.4,73.2,41.1C65,53.8,54.2,65,41.2,72.3C28.2,79.6,13,83,-1.8,85.8C-16.6,88.6,-33.2,90.8,-46.2,84.5C-59.2,78.2,-68.6,63.4,-75.3,48C-82,32.6,-86,16.3,-85.5,0.3C-85,-15.7,-80,-31.4,-71.5,-44.5C-63,-57.6,-51,-68.1,-37.5,-75.6C-24,-83.1,-9,-87.6,3.5,-93.2C16,-98.8,30.6,-83.6,44.7,-76.4Z"
-                        transform="translate(100 100)"
-                    />
-                </svg>
-            </div>
+        <section id="contact" className="py-24 bg-white">
+            <div className="max-w-5xl mx-auto px-6">
 
-            <div className="max-w-6xl mx-auto px-6 relative z-10">
                 {/* Heading */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-gray-900">
-                        You Can
-                    </h2>
-                    <div className="flex items-center justify-center gap-2 mt-1">
-                        <span className="text-4xl font-bold text-teal-500 relative">
-                            Contact me
-                            <svg
-                                className="absolute -bottom-4 left-0 w-full"
-                                viewBox="0 0 140 12"
+                    <h2 className="text-4xl font-bold text-gray-800">You Can</h2>
+                    <div className="inline-block relative mt-1">
+                        <span className="text-4xl font-bold text-teal-700">Contact me</span>
+                        {/* Wavy underline */}
+                        <svg
+                            className="absolute -bottom-5 left-0 w-full"
+                            viewBox="0 0 180 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M2 10 C20 3, 40 14, 60 8 C80 2, 100 14, 120 8 C140 2, 160 14, 178 8"
+                                stroke="#0f766e"
+                                strokeWidth="3"
+                                strokeLinecap="round"
                                 fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M2 8 C25 2, 50 10, 70 6 C90 2, 115 10, 138 5"
-                                    stroke="#14b8a6"
-                                    strokeWidth="2.5"
-                                    strokeLinecap="round"
-                                    fill="none"
-                                />
-                            </svg>
-                        </span>
+                            />
+                        </svg>
                     </div>
                 </div>
 
-                {/* Content */}
-                <div className="grid grid-cols-2 gap-16 mt-12">
-                    {/* Left: Contact Info */}
-                    <div className="space-y-6">
-                        {contactInfo.map((item, i) => (
-                            <div key={i} className="flex items-start gap-4">
-                                <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 shrink-0">
-                                    {item.icon}
-                                </div>
-                                <div>
-                                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">
-                                        {item.label}
-                                    </p>
-                                    <p className="text-sm text-gray-700 whitespace-pre-line">{item.value}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                {/* Two-column layout */}
+                <div className="flex gap-12 items-start mt-16">
 
-                    {/* Right: Contact Form */}
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <div className="grid grid-cols-2 gap-4">
-                            <div>
-                                <label className="block text-xs text-gray-500 mb-1">First Name</label>
-                                <input
-                                    type="text"
-                                    name="firstName"
-                                    value={form.firstName}
-                                    onChange={handleChange}
-                                    placeholder="First Name"
-                                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent transition"
-                                />
+                    {/* Left: Contact Info */}
+                    <div className="flex flex-col gap-8 w-72 shrink-0 pt-4">
+                        {/* Location */}
+                        <div className="flex items-start gap-4">
+                            <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center shrink-0">
+                                <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 9.75A6.75 6.75 0 0116.5 9.75c0 4.5-6.75 10.5-6.75 10.5S3 14.25 3 9.75z" />
+                                    <circle cx="9.75" cy="9.75" r="2.25" stroke="currentColor" strokeWidth={1.8} />
+                                </svg>
                             </div>
                             <div>
-                                <label className="block text-xs text-gray-500 mb-1">Last Name</label>
-                                <input
-                                    type="text"
-                                    name="lastName"
-                                    value={form.lastName}
-                                    onChange={handleChange}
-                                    placeholder="Last Name"
-                                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent transition"
-                                />
+                                <p className="font-semibold text-gray-800 text-sm mb-0.5">My Location</p>
+                                <p className="text-sm text-gray-500 leading-snug">
+                                    2589 Nehanda Street Dz2 harare<br />Zimbabwe
+                                </p>
                             </div>
                         </div>
-                        <div>
-                            <label className="block text-xs text-gray-500 mb-1">Your Message</label>
+
+                        {/* Phone */}
+                        <div className="flex items-start gap-4">
+                            <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center shrink-0">
+                                <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 5.5A1.5 1.5 0 014.5 4h2.28a1 1 0 01.95.68l1.1 3.3a1 1 0 01-.29 1.07L7.1 10.4a11.04 11.04 0 005.5 5.5l1.35-1.41a1 1 0 011.07-.29l3.3 1.1a1 1 0 01.68.95V17.5A1.5 1.5 0 0117.5 19C10.044 19 4 12.956 4 5.5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p className="font-semibold text-gray-800 text-sm mb-0.5">Phone Number</p>
+                                <p className="text-sm text-gray-500">(+263) 717 479076</p>
+                            </div>
+                        </div>
+
+                        {/* Email */}
+                        <div className="flex items-start gap-4">
+                            <div className="w-11 h-11 bg-purple-100 rounded-xl flex items-center justify-center shrink-0">
+                                <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth={1.8} />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M3 8l9 6 9-6" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p className="font-semibold text-gray-800 text-sm mb-0.5">Email Address</p>
+                                <p className="text-sm text-gray-500">charindapanzetakunda@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right: Form card */}
+                    <div className="relative flex-1 bg-white rounded-2xl shadow-md border border-gray-100 p-8 overflow-hidden">
+                        {/* Decorative purple quarter-circle top-right */}
+                        <div
+                            className="absolute -top-2 -right-2 w-20 h-20 bg-purple-600 rounded-bl-full pointer-events-none"
+                        />
+
+                        <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
+                            <input
+                                type="text"
+                                name="name"
+                                value={form.name}
+                                onChange={handleChange}
+                                placeholder="Your Name"
+                                className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent transition"
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                value={form.email}
+                                onChange={handleChange}
+                                placeholder="Your Email"
+                                className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent transition"
+                            />
+                            <input
+                                type="tel"
+                                name="phone"
+                                value={form.phone}
+                                onChange={handleChange}
+                                placeholder="Your Phone"
+                                className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent transition"
+                            />
                             <textarea
                                 name="message"
                                 value={form.message}
                                 onChange={handleChange}
                                 placeholder="Your Message"
-                                rows={5}
-                                className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent transition resize-none"
+                                rows={4}
+                                className="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent transition resize-none"
                             />
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg text-sm font-medium transition-colors shadow-lg shadow-purple-200"
-                        >
-                            Send Message
-                        </button>
-                    </form>
+                            <button
+                                type="submit"
+                                className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg text-sm font-semibold transition-colors"
+                            >
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
+
+                {/* Dotted decoration bottom-left of form */}
+                <div className="flex justify-end mt-0 -mt-8 pr-4 pointer-events-none select-none">
+                </div>
+
             </div>
         </section>
     );

@@ -3,25 +3,25 @@ import Image from "next/image";
 
 const projects = [
     {
-        type: "< type of project >",
+        type: "Project pic type",
         name: "Project name",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "https://images.unsplash.com/photo-1560330413-c97e0971b305?w=600&q=80",
+        image: "/img/flower.png",
     },
     {
         type: "< next project >",
         name: "Project name",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "https://images.unsplash.com/photo-1560330413-c97e0971b305?w=600&q=80",
+        image: "/img/flower.png",
     },
     {
         type: "< kind of project >",
         name: "Project name",
         description:
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        image: "https://images.unsplash.com/photo-1560330413-c97e0971b305?w=600&q=80",
+        image: "/img/flower.png",
     },
 ];
 
@@ -64,7 +64,7 @@ export default function Projects() {
                             className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow group"
                         >
                             {/* Image */}
-                            <div className="relative h-48 overflow-hidden">
+                            <div className="relative w-full h-64 overflow-hidden">
                                 <Image
                                     src={project.image}
                                     alt={project.name}

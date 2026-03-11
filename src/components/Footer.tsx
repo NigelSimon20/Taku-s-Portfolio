@@ -1,94 +1,117 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 
-const quickLinks = ["Home", "About", "Work", "Resume", "Contact Me"];
+const quickLinks = [
+    { label: "Hero", href: "#hero" },
+    { label: "About me", href: "#about" },
+    { label: "What i can do", href: "#skills" },
+    { label: "My work", href: "#projects" },
+    { label: "Contact me", href: "#contact" },
+];
 
 export default function Footer() {
-    const [email, setEmail] = useState("");
-
     return (
-        <footer className="bg-[#0d0d1a] text-white py-16">
-            <div className="max-w-6xl mx-auto px-6">
-                <div className="grid grid-cols-3 gap-12 mb-12">
-                    {/* Left: Logo + Newsletter */}
-                    <div>
-                        <h3 className="font-bold text-lg tracking-widest mb-4">TAKUNDA</h3>
-                        <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                            A freelance designer and developer creating beautiful digital experiences.
-                        </p>
-                        <div className="flex items-center gap-2">
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                placeholder="Get In Touch"
-                                className="flex-1 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                            />
-                            <button className="w-9 h-9 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center transition-colors shrink-0">
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <footer className="bg-[#0b1120] text-white pt-14 pb-0 relative">
+            <div className="max-w-6xl mx-auto px-8">
+
+                {/* Main grid: 3 columns */}
+                <div className="grid grid-cols-3 gap-12 pb-12">
+
+                    {/* Col 1 — Logo + Resume button */}
+                    <div className="flex flex-col gap-10">
+                        {/* TAKUNDA logo — uses the Gabriel Weiss Friends font */}
+                        <span
+                            className="text-white text-xl tracking-widest"
+                            style={{ fontFamily: "'GABRWFFR', sans-serif", letterSpacing: "0.25em" }}
+                        >
+                            T.A.K.U.N.D.A
+                        </span>
+
+                        {/* Resume pill button */}
+                        <div className="flex items-center gap-3 bg-[#141d2f] rounded-full px-6 py-3 w-fit">
+                            <span className="text-gray-300 text-sm">Click here for resume</span>
+                            <a
+                                href="#"
+                                className="w-9 h-9 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center justify-center shrink-0 transition-colors"
+                            >
+                                <svg className="w-4 h-4 text-white rotate-[-45deg]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
-                            </button>
+                            </a>
                         </div>
                     </div>
 
-                    {/* Center: Quick Links */}
+                    {/* Col 2 — Quick Links */}
                     <div>
-                        <h4 className="font-semibold text-sm tracking-wider text-gray-300 mb-5">Quick Links</h4>
+                        <h4 className="text-white font-semibold text-base mb-5">Quick Links</h4>
                         <ul className="space-y-3">
                             {quickLinks.map((link) => (
-                                <li key={link}>
+                                <li key={link.label}>
                                     <Link
-                                        href="#"
+                                        href={link.href}
                                         className="text-gray-400 text-sm hover:text-white transition-colors"
                                     >
-                                        {link}
+                                        {link.label}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    {/* Right: Contact */}
+                    {/* Col 3 — Contact */}
                     <div>
-                        <h4 className="font-semibold text-sm tracking-wider text-gray-300 mb-5">Contact</h4>
-                        <ul className="space-y-3">
-                            <li className="flex items-center gap-2 text-gray-400 text-sm">
-                                <svg className="w-4 h-4 text-purple-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                </svg>
-                                +1 (555) 123-4567
+                        <h4 className="text-white font-semibold text-base mb-5">Contact</h4>
+                        <ul className="space-y-4">
+                            {/* Phone */}
+                            <li className="flex items-center gap-3 text-gray-300 text-sm">
+                                <span className="w-7 h-7 bg-purple-600 rounded-md flex items-center justify-center shrink-0">
+                                    <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.01l-2.2 2.21z" />
+                                    </svg>
+                                </span>
+                                +263 717 479 076
                             </li>
-                            <li className="flex items-center gap-2 text-gray-400 text-sm">
-                                <svg className="w-4 h-4 text-purple-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
-                                hello@takunda.com
+
+                            {/* Email */}
+                            <li className="flex items-center gap-3 text-gray-300 text-sm">
+                                <span className="w-7 h-7 bg-purple-600 rounded-md flex items-center justify-center shrink-0">
+                                    <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <rect x="3" y="5" width="18" height="14" rx="2" strokeWidth={2} />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l9 6 9-6" />
+                                    </svg>
+                                </span>
+                                Charindapanzetakunda@gmail.com
                             </li>
-                            <li className="flex items-start gap-2 text-gray-400 text-sm">
-                                <svg className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                                123 Main Street, City, State 12345
+
+                            {/* LinkedIn */}
+                            <li className="flex items-center gap-3 text-gray-300 text-sm">
+                                <span className="w-7 h-7 bg-purple-600 rounded-md flex items-center justify-center shrink-0">
+                                    <svg className="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                </span>
+                                www.linkedin.com/in/takunda-b346a52ab
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="border-t border-white/10 pt-8 flex items-center justify-between">
-                    <p className="text-gray-500 text-xs">
-                        Copyright 2025 by Takunda
-                    </p>
+                {/* Divider */}
+                <div className="border-t border-white/10" />
+
+                {/* Bottom bar */}
+                <div className="flex items-center justify-between py-5">
+                    <p className="text-gray-500 text-xs">Copyright @2024 Takue_thebrain</p>
+
+                    {/* Back to top — white pill */}
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                        className="w-10 h-10 bg-white/10 hover:bg-purple-600 rounded-full flex items-center justify-center transition-colors"
+                        className="flex flex-col items-center gap-1 bg-white text-purple-600 rounded-t-2xl px-6 pt-3 pb-4 -mb-0 hover:bg-gray-100 transition-colors"
                     >
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
                         </svg>
+                        <span className="text-xs font-medium">Back to top</span>
                     </button>
                 </div>
             </div>

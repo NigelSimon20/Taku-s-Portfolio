@@ -67,7 +67,7 @@ export default function Hero() {
             </div>
 
             {/* Tech Stack Marquee */}
-            <div className="mx-[15%] flex justify-center py-4 mt-8 sm:mt-0 bg-white overflow-hidden">
+            <div className="mx-[10%] flex justify-center py-4 mt-8 sm:mt-0 bg-white overflow-hidden">
                 <div className="w-full overflow-hidden">
                     <div
                         className="flex whitespace-nowrap"

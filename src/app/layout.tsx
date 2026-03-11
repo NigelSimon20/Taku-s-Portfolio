@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${inter.variable} ${dancingScript.variable} font-sans antialiased`}>
+            <body className={`${inter.variable} ${dancingScript.variable} font-varela antialiased`}>
                 {children}
             </body>
         </html>
