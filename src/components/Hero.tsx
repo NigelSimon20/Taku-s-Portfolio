@@ -1,32 +1,30 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
-const techStack = [
-    { name: "Web Design", icon: "🌐", color: "text-red-500" },
-    { name: "Photoshop", icon: "🎨", color: "text-orange-500" },
-    { name: "Figma", icon: "✦", color: "text-purple-500" },
-    { name: "Blender", icon: "⬡", color: "text-blue-500" },
-    { name: "Illustrator", icon: "Ai", color: "text-orange-600" },
-    { name: "After Effects", icon: "Ae", color: "text-purple-600" },
-    { name: "Lightroom", icon: "Lr", color: "text-blue-600" },
-    { name: "Web Design", icon: "🌐", color: "text-red-500" },
-    { name: "Photoshop", icon: "🎨", color: "text-orange-500" },
-    { name: "Figma", icon: "✦", color: "text-purple-500" },
-    { name: "Blender", icon: "⬡", color: "text-blue-500" },
-    { name: "Illustrator", icon: "Ai", color: "text-orange-600" },
-    { name: "After Effects", icon: "Ae", color: "text-purple-600" },
-    { name: "Lightroom", icon: "Lr", color: "text-blue-600" },
+const services = [
+    { name: "Ux/Ui design", icon: "📱", color: "text-teal-600" },
+    { name: "System design", icon: "🖥️", color: "text-blue-500" },
+    { name: "Branding", icon: "📣", color: "text-purple-500" },
+    { name: "Graphics design", icon: "✏️", color: "text-orange-500" },
+    { name: "Ux/Ui design", icon: "📱", color: "text-teal-600" },
+    { name: "System design", icon: "🖥️", color: "text-blue-500" },
+    { name: "Branding", icon: "📣", color: "text-purple-500" },
+    { name: "Graphics design", icon: "✏️", color: "text-orange-500" },
+    { name: "Ux/Ui design", icon: "📱", color: "text-teal-600" },
+    { name: "System design", icon: "🖥️", color: "text-blue-500" },
+    { name: "Branding", icon: "📣", color: "text-purple-500" },
+    { name: "Graphics design", icon: "✏️", color: "text-orange-500" },
 ];
 
 export default function Hero() {
     return (
-        <section className="min-h-screen pt-16 sm:pt-20 flex flex-col">
+        <section className="min-h-screen pt-16 sm:pt-20 flex flex-col bg-white">
             {/* Main Hero Content */}
-            <div className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 pt-10 sm:pt-[10vh] md:pt-[12vh] lg:pt-[15vh] flex flex-col items-center mb-4">
+            <div className="flex-1 w-full max-w-6xl mx-auto px-6 md:px-16 pt-12 sm:pt-[10vh] md:pt-[14vh] flex flex-col items-start mb-6">
 
                 {/* Top Row */}
-                <div className="flex flex-wrap justify-between items-center w-full gap-3 text-sm font-medium mb-6 sm:mb-[4vh]">
+                <div className="flex flex-wrap justify-between items-center w-full gap-3 text-sm font-medium mb-8 sm:mb-[5vh]">
                     <div className="flex items-center rounded-2xl border border-gray-100 bg-gray-50/70 p-1 pl-3 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
                         <span className="text-gray-500 text-[12px] sm:text-[13px] tracking-wide mr-3 sm:mr-4 flex items-center">
                             What i can use
@@ -43,53 +41,80 @@ export default function Hero() {
                 </div>
 
                 {/* Middle Row — Headline */}
-                <div className="w-full mb-6 sm:mb-[4vh] select-none">
-                    <h1 className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold text-gray-900 leading-[0.9] tracking-[-0.03em]">
+                <div className="w-full mb-8 sm:mb-[5vh] select-none">
+                    <h1 className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] font-semibold text-[#1c3548] leading-[0.9] tracking-[-0.03em]">
                         Innovation
                         <br />
-                        Starts <span className="text-[#1A5B5B]">Here</span>
+                        Starts{" "}
+                        <span className="bg-[#1e6153] text-white px-3 py-1 rounded-md inline-block leading-none">
+                            Here
+                        </span>
                     </h1>
                 </div>
 
-                {/* Bottom Row — CTA + Bio */}
-                <div className="flex flex-col sm:flex-row justify-between items-start w-full gap-6 sm:gap-8">
-                    <button className="bg-[#B06DFF] hover:bg-purple-500 text-white rounded-full px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-medium shadow-[0_8px_20px_rgba(176,109,255,0.3)] hover:shadow-[0_12px_25px_rgba(176,109,255,0.4)] transition-all transform hover:-translate-y-1 w-fit shrink-0">
-                        Let's collaborate
+                {/* Bottom Row — CTA + Bio + Service Icons */}
+                <div className="flex flex-col sm:flex-row justify-between items-start w-full gap-8">
+                    <button className="bg-[#1e6153] hover:bg-[#174d40] text-white rounded-full px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-medium shadow-[0_8px_20px_rgba(30,97,83,0.3)] hover:shadow-[0_12px_25px_rgba(30,97,83,0.4)] transition-all transform hover:-translate-y-1 w-fit shrink-0">
+                        Let&apos;s collaborate
                     </button>
 
-                    <div className="text-gray-600 text-sm md:text-base max-w-[300px] leading-[1.6] sm:ml-auto">
-                        Hello, my name Takunda<br />
-                        And i am a Ux/Ui designer.<br />
-                        Let us create a masterpiece<br />
-                        together!!!
-                    </div>
-                </div>
-            </div>
+                    <div className="flex flex-col sm:items-end gap-6">
+                        <div className="text-gray-600 text-sm md:text-base max-w-[300px] leading-[1.6] sm:text-right">
+                            Hello, my name is Takunda<br />
+                            And I am a Ux/Ui designer.<br />
+                            Let us create a masterpiece<br />
+                            together!
+                        </div>
 
-            {/* Tech Stack Marquee */}
-            <div className="mx-[10%] flex justify-center py-4 mt-8 sm:mt-0 bg-white overflow-hidden">
-                <div className="w-full overflow-hidden">
-                    <div
-                        className="flex whitespace-nowrap"
-                        style={{
-                            animation: "marquee 20s linear infinite",
-                        }}
-                    >
-                        {[...techStack, ...techStack].map((tech, i) => (
-                            <div key={i} className="flex items-center gap-2 mx-4 sm:mx-6 shrink-0">
-                                <span className={`text-sm sm:text-base font-bold ${tech.color}`}>
-                                    {tech.icon}
-                                </span>
-                                <span className="text-sm sm:text-base text-gray-500 font-medium">
-                                    {tech.name}
-                                </span>
+                        {/* Service Icons */}
+                        <div className="flex items-center gap-5">
+                            {/* Branding */}
+                            <div className="flex flex-col items-center gap-1.5">
+                                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                                    </svg>
+                                </div>
+                                <span className="text-[11px] text-gray-500 font-medium">Branding</span>
                             </div>
-                        ))}
+                            {/* Graphics Design */}
+                            <div className="flex flex-col items-center gap-1.5">
+                                <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                                    <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div>
+                                <span className="text-[11px] text-gray-500 font-medium">Graphics</span>
+                            </div>
+                            {/* App Design */}
+                            <div className="flex flex-col items-center gap-1.5">
+                                <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
+                                    <svg className="w-6 h-6 text-[#1e6153]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span className="text-[11px] text-gray-500 font-medium">App Design</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-
+            {/* Services Marquee */}
+            <div className="w-full overflow-hidden border-t border-b border-gray-100 bg-gray-50/50 py-4 mt-6">
+                <div
+                    className="flex whitespace-nowrap"
+                    style={{ animation: "marquee 25s linear infinite" }}
+                >
+                    {[...services, ...services].map((svc, i) => (
+                        <div key={i} className="flex items-center gap-2 mx-6 shrink-0">
+                            <span className={`text-base font-bold ${svc.color}`}>{svc.icon}</span>
+                            <span className="text-sm text-gray-500 font-medium">{svc.name}</span>
+                            <span className="ml-4 text-gray-300 text-lg select-none">·</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </section>
     );
 }

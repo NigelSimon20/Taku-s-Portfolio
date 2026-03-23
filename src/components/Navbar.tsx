@@ -19,13 +19,13 @@ export default function Navbar() {
 
                 {/* Left: Nav Links (desktop only) */}
                 <div className="hidden md:flex items-center gap-8">
-                    <Link href="#about" className="font-varela text-md text-black hover:text-purple-600 transition-colors">
+                    <Link href="#about" className="font-varela text-md text-black hover:text-[#1e6153] transition-colors">
                         About
                     </Link>
-                    <Link href="#projects" className="font-varela text-md text-black hover:text-purple-600 transition-colors">
+                    <Link href="#projects" className="font-varela text-md text-black hover:text-[#1e6153] transition-colors">
                         Projects
                     </Link>
-                    <Link href="#contact" className="font-varela text-md text-black hover:text-purple-600 transition-colors">
+                    <Link href="#contact" className="font-varela text-md text-black hover:text-[#1e6153] transition-colors">
                         Contact
                     </Link>
                 </div>
@@ -43,7 +43,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-3">
                     <Link
                         href="#"
-                        className="hidden md:block font-varela text-md text-gray-600 hover:text-purple-600 transition-colors mr-[30px]"
+                        className="hidden md:block font-varela text-md text-gray-600 hover:text-[#1e6153] transition-colors mr-[30px]"
                     >
                         Resume
                     </Link>
@@ -53,7 +53,7 @@ export default function Navbar() {
                         href="https://www.linkedin.com/in/your-profile"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hidden md:flex w-10 h-10 bg-gray-900 rounded items-center justify-center hover:bg-purple-700 transition-colors"
+                        className="hidden md:flex w-10 h-10 bg-gray-900 rounded items-center justify-center hover:bg-[#1e6153] transition-colors"
                     >
                         <svg
                             className="w-4 h-4 text-white"
@@ -92,16 +92,16 @@ export default function Navbar() {
                     }`}
             >
                 <div className="px-6 pb-6 flex flex-col gap-4 font-varela text-gray-700">
-                    <Link onClick={() => setOpen(false)} href="#about" className="hover:text-purple-600 transition">
+                    <Link onClick={() => setOpen(false)} href="#about" className="hover:text-[#1e6153] transition">
                         About
                     </Link>
-                    <Link onClick={() => setOpen(false)} href="#projects" className="hover:text-purple-600 transition">
+                    <Link onClick={() => setOpen(false)} href="#projects" className="hover:text-[#1e6153] transition">
                         Projects
                     </Link>
-                    <Link onClick={() => setOpen(false)} href="#contact" className="hover:text-purple-600 transition">
+                    <Link onClick={() => setOpen(false)} href="#contact" className="hover:text-[#1e6153] transition">
                         Contact
                     </Link>
-                    <Link onClick={() => setOpen(false)} href="#" className="hover:text-purple-600 transition">
+                    <Link onClick={() => setOpen(false)} href="#" className="hover:text-[#1e6153] transition">
                         Resume
                     </Link>
                 </div>
