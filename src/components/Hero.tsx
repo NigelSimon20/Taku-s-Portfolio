@@ -42,11 +42,11 @@ export default function Hero() {
 
                 {/* Middle Row — Headline */}
                 <div className="w-full mb-[2vh] sm:mb-[3vh] shrink-0">
-                    <h1 className="flex flex-col w-full text-[18vw] sm:text-[16vw] md:text-[15vw] lg:text-[11.8rem] xl:text-[13rem] text-[#1c3548] leading-[0.85] tracking-[-0.04em] font-bold">
+                    <h1 className="flex flex-col w-full text-[clamp(4rem,13.5vw,11.5rem)] text-[#1c3548] leading-[0.85] tracking-[-0.04em] font-bold">
                         <span className="w-full">Innovation</span>
                         <span className="flex items-center justify-between w-full mt-[1vh] pr-1">
                             <span>Starts</span>
-                            <span className="bg-[#1e6153] text-white px-[4vw] lg:px-[2rem] pt-[1.5vh] pb-[2vh] rounded-2xl lg:rounded-3xl inline-flex items-center justify-center leading-none text-[14vw] sm:text-[12vw] md:text-[11vw] lg:text-[8.5rem] xl:text-[9.5rem] transform translate-y-[-0.5vh]">
+                            <span className="bg-[#1e6153] text-white px-[clamp(1rem,3vw,2rem)] pt-[1.5vh] pb-[2vh] rounded-2xl lg:rounded-3xl inline-flex items-center justify-center leading-none text-[clamp(3rem,10.5vw,9.5rem)] transform translate-y-[-0.5vh]">
                                 Here
                             </span>
                         </span>
