@@ -42,7 +42,7 @@ export default function Hero() {
 
                 {/* Middle Row — Headline */}
                 <div className="w-full mb-8 sm:mb-[5vh] select-none">
-                    <h1 className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] font-semibold text-[#1c3548] leading-[0.9] tracking-[-0.03em]">
+                    <h1 className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-[12rem] text-[#1c3548] leading-[0.9] tracking-[-0.03em]">
                         Innovation
                         <br />
                         Starts{" "}

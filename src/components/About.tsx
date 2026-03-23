@@ -26,13 +26,13 @@ export default function About() {
             {/* The outer container uses max-w-6xl for constraints */}
             <div className="max-w-6xl mx-auto px-6">
                 {/* Heading */}
-                <div className="mb-20">
-                    <h2 className="text-[2.8rem] md:text-[4rem] font-semibold text-[#1c3548] leading-tight">
+                <div className="mb-20 flex flex-col items-center">
+                    <h2 className="text-[2.8rem] md:text-[4rem] text-[#1c3548] leading-tight">
                         You Can Learn More
                     </h2>
                     <div className="flex items-baseline gap-4 mt-1">
                         <span className="text-[#1c3548] text-xl md:text-2xl font-medium">about</span>
-                        <span className="text-[#1e6153] text-[3rem] md:text-[4.5rem] font-semibold relative leading-tight">
+                        <span className="text-[#1e6153] text-[3rem] md:text-[4.5rem] relative leading-tight">
                             Takunda
                             <svg
                                 className="absolute -bottom-3 left-0 w-full text-[#1e6153]"

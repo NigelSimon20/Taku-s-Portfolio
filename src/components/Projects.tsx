@@ -39,16 +39,16 @@ const projects = [
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-24 bg-[#f0edf9]">
+        <section id="projects" className="py-24">
             <div className="max-w-6xl mx-auto px-6 md:px-16">
                 {/* Heading */}
-                <div className="mb-16">
-                    <h2 className="text-[2.8rem] md:text-[4rem] font-semibold text-[#1c3548] leading-tight">
+                <div className="mb-16 flex flex-col items-center">
+                    <h2 className="text-[2.8rem] md:text-[4rem] text-[#1c3548] leading-tight">
                         You Can View
                     </h2>
                     <div className="flex items-baseline gap-4 mt-1">
                         <span className="text-[#1c3548] text-lg md:text-2xl font-medium">My</span>
-                        <span className="text-[#1e6153] text-[3rem] md:text-[5rem] font-semibold relative leading-tight">
+                        <span className="text-[#1e6153] text-[3rem] md:text-[5rem] relative leading-tight">
                             Projects
                             <svg
                                 className="absolute -bottom-4 left-0 w-full text-[#1e6153]"

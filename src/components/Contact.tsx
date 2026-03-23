@@ -25,10 +25,10 @@ export default function Contact() {
             <div className="max-w-5xl mx-auto px-6">
 
                 {/* Heading */}
-                <div className="mb-16">
-                    <h2 className="text-[2.8rem] md:text-[4rem] font-semibold text-[#1c3548] leading-tight">You Can</h2>
+                <div className="mb-16 flex flex-col items-center">
+                    <h2 className="text-[2.8rem] md:text-[4rem] text-[#1c3548] leading-tight">You Can</h2>
                     <div className="inline-block relative mt-1">
-                        <span className="text-[2.8rem] md:text-[4rem] font-semibold text-[#1e6153] leading-tight">Contact me</span>
+                        <span className="text-[2.8rem] md:text-[4rem] text-[#1e6153] leading-tight">Contact me</span>
                         {/* Wavy underline */}
                         <svg
                             className="absolute -bottom-4 left-0 w-full text-[#1e6153]"
