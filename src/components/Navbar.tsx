@@ -7,8 +7,8 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm h-[9vh] flex items-center">
-            <div className="w-full max-w-7xl mx-auto px-6 flex items-center justify-between relative">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm py-4">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative">
 
                 {/* Mobile: Logo */}
                 <span className="font-gabriel text-2xl tracking-widest text-gray-900 md:hidden whitespace-nowrap">
