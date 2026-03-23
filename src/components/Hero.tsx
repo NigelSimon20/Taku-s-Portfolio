@@ -42,7 +42,7 @@ export default function Hero() {
 
                 {/* Middle Row — Headline */}
                 <div className="w-full mb-[2vh] sm:mb-[3vh] shrink-0">
-                    <h1 className="flex flex-col w-full text-[clamp(4rem,13.5vw,11.5rem)] text-[#1c3548] leading-[0.85] tracking-[-0.04em] font-bold">
+                    <h1 className="flex flex-col w-full text-[clamp(4rem,13.5vw,11.5rem)] text-[#1c3548] leading-[0.85] tracking-[-0.04em]">
                         <span className="w-full">Innovation</span>
                         <span className="flex items-center justify-between w-full mt-[1vh] pr-1">
                             <span>Starts</span>
